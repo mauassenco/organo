@@ -1,10 +1,12 @@
 .member {
     width: 280px;
+    position: relative;
 }
 
 .member .header {
     border-radius: 10px 10px 0px 0px;
 }
+
 .member img {
     width: 100px;
     border-radius: 50%;
@@ -35,4 +37,12 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.member .delete {
+    position: absolute;
+    right: -10px;
+    top: -10px;    
+    cursor: pointer;
+
 }
