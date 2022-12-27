@@ -2,7 +2,6 @@
     text-align: center;
     padding: 32px;
     display: block;
-    position: relative;
 }
 
 .squad h3 {
@@ -18,10 +17,4 @@
     margin-top: 32px;
     flex-wrap: wrap;
     gap:24px
-}
-
-.squad .input-color {
-    position: absolute;
-    top: 20px;
-    right: 50px;
 }
