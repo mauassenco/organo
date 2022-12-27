@@ -1,0 +1,22 @@
+.dropdown-list label {
+    color: #212121;    
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 8px;
+}
+
+.dropdown-list select {
+    background: #FFFFFF;
+    border-radius: 0px;
+    border: none;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    font-size: 20px;
+    mix-blend-mode: normal;
+    padding: 12px 24px;
+    width: 100%;
+}
