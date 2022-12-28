@@ -46,7 +46,7 @@ const Form = (props) => {
 
                 />
                 <TextField
-                    labelText="Imagem"
+                    labelText="image"
                     placeholder="Type image source"
                     value={image}
                     atChange={value => setImage(value)}
