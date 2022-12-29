@@ -2,7 +2,7 @@ import Member from "../Member";
 import "./styles.css";
 import hexToRgba from 'hex-to-rgba';
 
-const Squad = ({squad, members, changeColor, atDelete}) => {
+const Squad = ({squad, members, changeColor, atDelete, atFavorited}) => {
   return (
     members.length > 0 && (
       <section
@@ -31,7 +31,8 @@ const Squad = ({squad, members, changeColor, atDelete}) => {
                 key={index}
                 member={member}
                 headerBg={squad.cardColor}
-                atDelete={atDelete}                
+                atDelete={atDelete}             
+                atFavorited={atFavorited}
               />
             )
           })}

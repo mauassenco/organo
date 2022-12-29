@@ -44,6 +44,10 @@
     position: absolute;
     right: -10px;
     top: -10px;    
-    cursor: pointer;
+    cursor: pointer;    
+}
 
+.member .favorite svg{
+    color: red;
+    cursor: pointer;
 }

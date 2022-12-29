@@ -1,8 +1,8 @@
-.text-field {
+.field {
     margin: 24px 0;
 }
 
-.text-field label {
+.field label {
     display: block;
     margin-bottom: 8px;
     font-family: 'Montserrat', sans-serif;
@@ -13,7 +13,7 @@
     color: #6278f7;
 }
 
-.text-field input {
+.field input {
     width: 100%;
     border: none;
     background: #FFFFFF;
@@ -27,6 +27,10 @@
     border-radius: 15px;
 }
 
-.text-field input::placeholder{
+.field input::placeholder{
     color: #6278F7
+}
+.field-color input{
+    height: 40px;
+    padding: 5px 24px;
 }
