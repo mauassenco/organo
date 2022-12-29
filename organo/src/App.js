@@ -214,7 +214,7 @@ function App() {
       squad: squads[5].name
     },
   ]
-  
+
   const [members,setMember] = useState(initial)
 
   const deleteMember = (id) => {
@@ -239,12 +239,11 @@ function App() {
       <Banner />
       <Form 
         squads={squads.map(squad => squad.name) } 
-        // atRegister = {newMember => atAddNewMember(newMember)}
         atRegister={newMember => setMember([...members, newMember])}
         atCreateSquad={addSquad}
       />
       <section className="squads">
-        <h1>My company</h1>
+        <h1>My Squads</h1>
         {squads.map((squad, index) => 
             <Squad
               changeColor={changeSquadColor}              
