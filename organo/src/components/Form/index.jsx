@@ -1,5 +1,5 @@
 import "./styles.css"
-import TextField from "../TextField"
+import Field from "../Field"
 import DropdownList from "../DropdownList"
 import Button from "../Button"
 import { useState } from "react"
@@ -31,7 +31,7 @@ const Form = ({atRegister, squads, atCreateSquad}) => {
         <section className="form">
             <form action="" onSubmit={atSaveForm}>
                 <h2>Fill in the form with the employee's data</h2>
-                <TextField
+                <Field
                     required
                     labelText="Name"
                     placeholder="Type your name"
@@ -39,7 +39,7 @@ const Form = ({atRegister, squads, atCreateSquad}) => {
                     atChange={value => setName(value)}
 
                 />
-                <TextField
+                <Field
                     required
                     labelText="Position"
                     placeholder="Type your position"
@@ -47,7 +47,7 @@ const Form = ({atRegister, squads, atCreateSquad}) => {
                     atChange={value => setPosition(value)}
 
                 />
-                <TextField
+                <Field
                     labelText="image"
                     placeholder="Type image source"
                     value={image}
@@ -71,22 +71,25 @@ const Form = ({atRegister, squads, atCreateSquad}) => {
                 onSubmit={(e) => {
                     e.preventDefault()
                     atCreateSquad({name: squadName, cardColor: squadColor})
+                    setSquadName('')
+                    setSquadColor('#000')
                 }
             }>
                 <h2>Fill in the form to create a new squad</h2>
-                <TextField
+                <Field
                     required
                     labelText="Squad Name"
                     placeholder="Type the squad name"
                     value={squadName}
-                    atChange={value => setSquadName(value)}
+                    atChange={value => {setSquadName(value)}}                    
                 />
-                <TextField
+                <Field
                     required
                     labelText="Squad color"
                     placeholder="Select a color to squad"
                     value={squadColor}
                     atChange={value => setSquadColor(value)}
+                    type='color'
                 />
                 <Button>
                     Create Squad
