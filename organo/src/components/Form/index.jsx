@@ -4,16 +4,18 @@ import DropdownList from "../DropdownList"
 import Button from "../Button"
 import { useState } from "react"
 
-const Form = (props) => {
+const Form = ({atRegister, squads, atCreateSquad}) => {
 
     const [name, setName] = useState('')
     const [position, setPosition] = useState('')
     const [image, setImage] = useState('')
     const [squad, setSquad] = useState('')
+    const [squadName, setSquadName] = useState('')
+    const [squadColor, setSquadColor] = useState('')
 
     const atSaveForm = (e) => {
         e.preventDefault()
-        props.atRegister({
+        atRegister({
             name,
             position,
             image,
@@ -55,13 +57,39 @@ const Form = (props) => {
                 <DropdownList
                     required
                     label="Squad"
-                    item={props.squads}
+                    item={squads}
                     value={squad}
                     atChange={value => setSquad(value)}
 
                 />
                 <Button>
                     Create Card
+                </Button>
+            </form>
+            <form 
+                action="" 
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    atCreateSquad({name: squadName, cardColor: squadColor})
+                }
+            }>
+                <h2>Fill in the form to create a new squad</h2>
+                <TextField
+                    required
+                    labelText="Squad Name"
+                    placeholder="Type the squad name"
+                    value={squadName}
+                    atChange={value => setSquadName(value)}
+                />
+                <TextField
+                    required
+                    labelText="Squad color"
+                    placeholder="Select a color to squad"
+                    value={squadColor}
+                    atChange={value => setSquadColor(value)}
+                />
+                <Button>
+                    Create Squad
                 </Button>
             </form>
         </section>
