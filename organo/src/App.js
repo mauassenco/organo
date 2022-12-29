@@ -215,12 +215,7 @@ function App() {
     },
   ]
 
-
   const [members,setMember] = useState(initial)
-
-  const atAddNewMember = (newMember) => {
-    setMember([...members, newMember])
-  }
 
   const deleteMember = (id) => {
     setMember(members.filter(member => member.id !== id))
@@ -235,26 +230,30 @@ function App() {
     }))
   }
 
+  const addSquad = ({name, cardColor})=> {
+    setSquads([...squads, {name, cardColor, id: uuidv4()}])    
+  }
+
   return (
     <div className="App">
       <Banner />
       <Form 
         squads={squads.map(squad => squad.name) } 
-        atRegister = {newMember => atAddNewMember(newMember)}
+        atRegister={newMember => setMember([...members, newMember])}
+        atCreateSquad={addSquad}
       />
-
-      {squads.map((squad, index) => 
-          <Squad
-            key={index}
-            squad={squad}
-            changeColor={changeSquadColor}
-            atDelete={deleteMember}
-            cardColor={squad.cardColor}
-            id={squad.id}            
-            members={members.filter(member => member.squad === squad.name)}
-            name={squad.name}       
-        />
-      )}
+      <section className="squads">
+        <h1>My Squads</h1>
+        {squads.map((squad, index) => 
+            <Squad
+              changeColor={changeSquadColor}              
+              key={index}
+              squad={squad}   
+              atDelete={deleteMember}     
+              members={members.filter(member => member.squad === squad.name)}  
+          />
+        )}
+        </section>
       <Footer />
     </div>
   );
